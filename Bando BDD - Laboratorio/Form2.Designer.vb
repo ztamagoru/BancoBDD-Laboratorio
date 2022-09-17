@@ -55,6 +55,7 @@ Partial Class Form2
         'RbttnSuma
         '
         Me.RbttnSuma.AutoSize = True
+        Me.RbttnSuma.Checked = True
         Me.RbttnSuma.Font = New System.Drawing.Font("Segoe UI Semilight", 15.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.RbttnSuma.Location = New System.Drawing.Point(3, 3)
         Me.RbttnSuma.Name = "RbttnSuma"
@@ -72,7 +73,6 @@ Partial Class Form2
         Me.RbttnResta.Name = "RbttnResta"
         Me.RbttnResta.Size = New System.Drawing.Size(38, 32)
         Me.RbttnResta.TabIndex = 10
-        Me.RbttnResta.TabStop = True
         Me.RbttnResta.Text = "-"
         Me.RbttnResta.UseVisualStyleBackColor = True
         '
@@ -88,6 +88,7 @@ Partial Class Form2
         'RbttnSelected
         '
         Me.RbttnSelected.AutoSize = True
+        Me.RbttnSelected.Checked = True
         Me.RbttnSelected.Font = New System.Drawing.Font("Segoe UI Semilight", 15.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.RbttnSelected.Location = New System.Drawing.Point(44, 134)
         Me.RbttnSelected.Name = "RbttnSelected"
@@ -105,7 +106,6 @@ Partial Class Form2
         Me.RbttnAll.Name = "RbttnAll"
         Me.RbttnAll.Size = New System.Drawing.Size(180, 32)
         Me.RbttnAll.TabIndex = 12
-        Me.RbttnAll.TabStop = True
         Me.RbttnAll.Text = "Apply to all clients"
         Me.RbttnAll.UseVisualStyleBackColor = True
         '

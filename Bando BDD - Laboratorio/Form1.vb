@@ -20,7 +20,7 @@ Public Class Form1
                 ", FullName varchar(250) not null" + vbCrLf +
                 ", DNI varchar(50) not null" + vbCrLf +
                 ", Cellphone varchar(50) not null" + vbCrLf +
-                ", Descubierto varchar(50) not null" + vbCrLf +
+                ", Descubierto float not null" + vbCrLf +
                 ")"
 
             conexion.execute(comando)
@@ -173,8 +173,15 @@ Public Class Form1
     End Sub
 
     Private Sub bttnAjustar_Click(sender As Object, e As EventArgs) Handles bttnAjustar.Click
-        Form2.Show()
-        Me.Enabled = False
+        If TBoxidClient.Text = String.Empty Then
+
+            MsgBox("Error." + vbCrLf + "Consult a value to be able to remove it.", vbOK)
+
+        Else
+
+            Form2.Show()
+            Me.Enabled = False
+        End If
     End Sub
 
     Sub adjust()
@@ -188,12 +195,27 @@ Public Class Form1
 
         If confirm And porcentage > 0 Then
             Try
-                comando = "UPDATE Client" + vbCrLf +
-                    "SET Descubierto = Descubierto " + symbol + " (Descubierto * " +
-            Catch ex As Exception
+                conexion = New Class1
 
+                comando = "UPDATE Client" + vbCrLf +
+                    "SET Descubierto = Descubierto " + symbol + " (Descubierto * " + porcentage + " / 100) " + vbCrLf + condition
+
+                ' intenté hacer esta parte con varchar, int y float pero de igual manera no me funcionó en ninguna,
+                ' así q simplemente decidí dejarlo así
+
+                ' no sé si es q en su código vaya a funcionar, espero q si
+
+                conexion.execute(comando)
+
+                MsgBox("Operation successful.", vbOK)
+            Catch ex As Exception
+                MsgBox("Error." + vbCrLf + ex.Message, vbOK)
+                Return
             End Try
         End If
 
+        Form2.txt.Clear()
+        clear()
+        refresh()
     End Sub
 End Class

@@ -19,6 +19,8 @@
     Private Sub bttnCancel_Click(sender As Object, e As EventArgs) Handles bttnCancel.Click
         confirm = False
 
+        txt.Clear()
+
         Form1.Enabled = True
         Me.Hide()
     End Sub
